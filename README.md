@@ -14,7 +14,7 @@ Documentation can be read in two formats\_ _markdown_ & _blog post_.
 
 **Main Framework** - [Astro](https://astro.build/)  
 **Type Checking** - [TypeScript](https://www.typescriptlang.org/)  
-**Styling** - [TailwindCSS](https://tailwindcss.com/) 
+**Styling** - [TailwindCSS](https://tailwindcss.com/)  
 **Static Search** - [Pagefind](https://pagefind.app/)  
 **Icons** - [Tablers](https://tabler-icons.io/)  
 **Code Formatting** - [Prettier](https://prettier.io/)  
