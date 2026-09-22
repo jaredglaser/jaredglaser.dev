@@ -90,4 +90,4 @@ In the `HA USB/IP Client` app all you need to do is configure the ip address of 
 
 ![HA USB/IP Client app configuration screen](ha-usbip-app.png)
 
-Now you can use the devices like they were natively passed through to the HAOS VM. I can now migrate HAOS between the nodes, live or during maintenance reboots, and not lose my Zigbee devices.
+Now you can use the devices like they were natively passed through to the HAOS VM. I can now migrate HAOS between the nodes, live or during maintenance reboots, and not lose my Zigbee devices. While the Raspberry Pi is admittedly a single point of failure for the usb devices now, there always was one before, and this way failover no longer requires a human to physically move them.
