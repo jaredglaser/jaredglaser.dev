@@ -2,8 +2,8 @@
 author: Jared Glaser
 title: High Availability with USB over IP
 slug: ha-usb-ip
-pubDatetime: 2026-09-20T10:11:00.000Z
-modDatetime: 2026-09-22T00:56:23.643Z
+pubDatetime: 2026-09-20T10:11:00.000-04:00
+modDatetime: 2026-09-21T21:07:54.599-04:00
 featured: true
 draft: false
 tags:
