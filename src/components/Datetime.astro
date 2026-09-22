@@ -27,13 +27,16 @@ const {
 
 const t = useTranslations(Astro.currentLocale);
 
-const isModified = modDatetime && modDatetime > pubDatetime;
+const siteTimezone = postTimezone ?? config.site.timezone;
 
-const datetime = dayjs(isModified ? modDatetime : pubDatetime).tz(
-  postTimezone ?? config.site.timezone
-);
+const pubDate = dayjs(pubDatetime).tz(siteTimezone);
+const modDate = modDatetime
+  ? dayjs(modDatetime).tz(siteTimezone)
+  : undefined;
 
-const date = datetime.format("D MMM, YYYY");
+const isModified = modDate && modDate > pubDate;
+
+const textSize = ["text-sm", { "sm:text-base": size === "lg" }];
 ---
 
 <div
@@ -45,17 +48,18 @@ const date = datetime.format("D MMM, YYYY");
       { "scale-90": size === "sm" },
     ]}
   />
+  <time class:list={textSize} datetime={pubDate.toISOString()}>
+    {pubDate.format("D MMM, YYYY")}
+  </time>
   {
-    isModified && (
-      <span class:list={["text-sm", { "sm:text-base": size === "lg" }]}>
-        {t.post.updatedAt}:
-      </span>
+    isModified && modDate && (
+      <>
+        <span aria-hidden="true">&middot;</span>
+        <span class:list={textSize}>{t.post.updatedAt}:</span>
+        <time class:list={textSize} datetime={modDate.toISOString()}>
+          {modDate.format("D MMM, YYYY")}
+        </time>
+      </>
     )
   }
-  <time
-    class:list={["text-sm", { "sm:text-base": size === "lg" }]}
-    datetime={datetime.toISOString()}
-  >
-    {date}
-  </time>
 </div>
